@@ -1,31 +1,32 @@
 #ifndef BERITA_H_INCLUDED
 #define BERITA_H_INCLUDED
-
-#ifndef BERITA_H_INCLUDED
 using namespace std;
-struct Berita{
-    string judul_Berita, media_Berita, jenis_Berita;
+//struct elmList_jurnal;
+//typedef elmList_jurnal *adrP;
+struct Berita {
+    string judul_Berita, tanggal, kategori;
 };
+
 typedef Berita infotype_Berita;
-typedef struct elmList_Berita *adrB;
-struct elmList_Berita{
-    infotype info;
-    adrB next;
+typedef struct elmList_Berita *adrBerita;
+
+struct elmList_Berita {
+    infotype_Berita info;
+    adrBerita next;
 };
-struct List_Berita{
-    adrB First;
-};
-adrB createElmBerita(string judul_Berita,
-                     string media_Berita,
-                     string namaJurnalis,
-                     );
-void insertFirst_Berita(List_Berita &L, adrB p);
-void insertLast_Berita(List_Berita &L, adrB p);
-void insert_After(List_Berita &L, adrB p);
-void deleteFirst_Berita(List_Berita &L, adrB p);
-void deleteAfter_Berita(List_Berita &L, adrB p);
-void deleteLast_Berita(List_Berita &L, string judul_berita);
-adrB searchBerita(List_Berita &L, adrB p);
-void showList_Berita(List_Berita L);
+adrBerita createElmBerita(string judul_Berita,
+                          string tanggal,
+                          string kategori);
+
+void insertFirst_Berita(adrP P, adrBerita B);
+void insertLast_Berita(adrP P, adrBerita B);
+void insert_After(adrP P, adrBerita prec, adrBerita B);
+void deleteFirst_Berita(adrP P, adrBerita &B);
+void deleteAfter_Berita(adrP P, adrBerita prec, adrBerita &B);
+void deleteLast_Berita(adrP P, adrBerita &B);
+void deleteBerita(adrP P, adrBerita B);
+adrBerita searchBerita(List_jurnal L, string judul_berita);
+void showList_Berita(List_jurnal L);
+
 #endif // BERITA_H_INCLUDED
 
