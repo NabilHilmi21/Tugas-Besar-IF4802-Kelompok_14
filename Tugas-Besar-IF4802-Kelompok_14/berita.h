@@ -1,8 +1,11 @@
 #ifndef BERITA_H_INCLUDED
 #define BERITA_H_INCLUDED
+#include "jurnalis.h"
+
+#include <string>
+#include "jurnalis.h"
 using namespace std;
-//struct elmList_jurnal;
-//typedef elmList_jurnal *adrP;
+
 struct Berita {
     string judul_Berita, tanggal, kategori;
 };
@@ -25,8 +28,9 @@ void deleteFirst_Berita(adrP P, adrBerita &B);
 void deleteAfter_Berita(adrP P, adrBerita prec, adrBerita &B);
 void deleteLast_Berita(adrP P, adrBerita &B);
 void deleteBerita(adrP P, adrBerita B);
-adrBerita searchBerita(List_jurnal L, string judul_berita);
-void showList_Berita(List_jurnal L);
+adrBerita searchBerita(adrP P, string judul);
+void showList_Berita(adrP P);
+int countBerita(adrP P);
+
 
 #endif // BERITA_H_INCLUDED
-

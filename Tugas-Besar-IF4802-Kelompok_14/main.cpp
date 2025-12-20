@@ -1,58 +1,54 @@
+// main.cpp
 #include <iostream>
+#include <string>
 #include "jurnalis.h"
+#include "berita.h"
 
 using namespace std;
 
-int main(){
-    string nama, media, jenis_kelamin;
-    int jurnalis_id = 0;
-    int tahun_pengalaman = 0;
+void main_admin(List_jurnal &L);
+void main_user(List_jurnal &L);
 
-    adrP P;
+int main() {
     List_jurnal L;
-
     createList(L);
+    int pilihan = -1;
 
-    for (int i = 0; i < 3;){
-        cout << "Input data jurnalis: " << endl;
-        cout << "==========================" << endl;
+    do {
+        cout << "\n\t._________________________________________________." << endl;
+        cout << "\t|                                                 |" << endl;
+        cout << "\t|         SISTEM INFORMASI JURNALISTIK            |" << endl;
+        cout << "\t|            MULTI LINKED LIST (1:N)              |" << endl;
+        cout << "\t|_________________________________________________|" << endl;
+        cout << "\t|                                                 |" << endl;
+        cout << "\t|   [1] MENU ADMIN (Manajemen Data Dasar)         |" << endl;
+        cout << "\t|   [2] MENU USER  (Implementasi Studi Kasus)     |" << endl;
+        cout << "\t|   [0] KELUAR PROGRAM                            |" << endl;
+        cout << "\t|_________________________________________________|" << endl;
+        cout << "\t Pilih Akses : ";
 
-        cout << "Nama: ";
-        cin >> nama;
+        cin >> pilihan;
 
-        cout << "Media: ";
-        cin >> media;
-
-        cout << "Jenis Kelamin: ";
-        cin >> jenis_kelamin;
-
-        cout << "ID Jurnalis: ";
-        cin >> jurnalis_id;
-
-        if (searchJurnalisID(L, jurnalis_id) == nullptr){
-            cout << "Tahun pengalaman: ";
-            cin >> tahun_pengalaman;
-
-            P = createElmP(nama, media, jenis_kelamin, jurnalis_id, tahun_pengalaman);
-            insertLast_jurnalis(L, P);
-
-            cout << endl;
-            i++;
-        } else {
-            cout << "Jurnalis dengan ID itu sudah ada, input lagi" << endl;
-            cout << endl;
+        if (cin.fail()) {
+            cin.clear();
+            string ignore;
+            getline(cin, ignore);
+            cout << "\n\t [!] ERROR: Input tidak Valid! Masukkan angka saja." << endl;
+            pilihan = -1;
+            continue;
         }
 
-    }
+        if (pilihan == 1) {
+            main_admin(L);
+        } else if (pilihan == 2) {
+            main_user(L);
+        } else if (pilihan == 0) {
+            cout << "\n\t [!] Menutup Program... Sampai Jumpa!" << endl;
+        } else {
+            cout << "\n\t [!] Pilihan tidak tersedia. Gunakan angka 1, 2, atau 0." << endl;
+        }
 
-    showList_jurnalis(L);
-
-    cout << "Hapus jurnalis berdasarkan nama: ";
-    cin >> nama;
-
-    deleteJurnalis(L, searchJurnalis(L, nama));
-
-    showList_jurnalis(L);
+    } while (pilihan != 0);
 
     return 0;
 }

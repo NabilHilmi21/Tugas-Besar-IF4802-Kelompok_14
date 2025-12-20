@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1766180596 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\jurnalis_103012400233.cpp
+	<iostream>
+	"jurnalis.h"
+
+1766095751 c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\jurnalis.h
+	<iostream>
+	<string>
+
+1766167504 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\main.cpp
+	<iostream>
+	<string>
+	"jurnalis.h"
+	"berita.h"
+
+1766173339 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\main_admin.cpp
+	<iostream>
+	<string>
+	"jurnalis.h"
+	"berita.h"
+
+1766101607 c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\berita.h
+	"jurnalis.h"
+	<string>
+	"jurnalis.h"
+
+1766179676 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\main_user.cpp
+	<iostream>
+	<string>
+	"jurnalis.h"
+	"berita.h"
+
+1766180503 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\berita_103012300042.cpp
+	<iostream>
+	"berita.h"
+	"jurnalis.h"
+
+1766180521 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\berita_103012400233.cpp
+	<iostream>
+	"berita.h"
+	"jurnalis.h"
+
+1766180561 source:c:\kuliah\semester5\tugas-besar-if4802-kelompok_14-final\jurnalis_103012300042.cpp
+	<iostream>
+	"jurnalis.h"
+
